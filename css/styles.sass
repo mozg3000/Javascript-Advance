@@ -1,3 +1,4 @@
+@import "_styles.css"
 body
   margin: 0
   padding: 0
@@ -41,3 +42,28 @@ body
     font-family: cursive
     font-weight: bold
     color: darkcyan
+.cart-chb-c-lbl
+  position: relative
+  margin-top: 10px
+  margin-right: 216px
+  z-index: 1
+  height: 40px
+  width: 40px
+  transition: opacity 100ms ease-in,fill 100ms ease-in
+  &:hover .cart-chb-svg
+    fill: #f16d7f
+  //&:hover .drop-box-cart
+  //  display: block
+  //  //transition: opacity 1s ease-in
+  //  opacity: 1
+  //  width: auto
+  //  height: auto
+  //  padding: 20px
+  //&:hover .drop-box-account:before
+  //  display: block
+.drop-box-cart-show
+  display: block
+  opacity: 1
+  width: auto
+  height: auto
+  padding: 20px

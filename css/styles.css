@@ -1,3 +1,4 @@
+@import "_styles.css";
 body {
   margin: 0;
   padding: 0;
@@ -47,6 +48,27 @@ body {
   font-family: cursive;
   font-weight: bold;
   color: darkcyan;
+}
+
+.cart-chb-c-lbl {
+  position: relative;
+  margin-top: 10px;
+  margin-right: 216px;
+  z-index: 1;
+  height: 40px;
+  width: 40px;
+  transition: opacity 100ms ease-in, fill 100ms ease-in;
+}
+.cart-chb-c-lbl:hover .cart-chb-svg {
+  fill: #f16d7f;
+}
+
+.drop-box-cart-show {
+  display: block;
+  opacity: 1;
+  width: auto;
+  height: auto;
+  padding: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
