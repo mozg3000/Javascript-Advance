@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <title>Интернет-магазин</title>
+</head>
+<body>
+<div id="app">
+    <header class="shop-head">
+        <div class="header-right header-flex">
+            <form action="#" class="search-form">
+                <input type="text" class="search-field" v-model="searchLine">
+                <button class="btn-search" type="submit" @click="doFilter">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <div  class="cart-chb-c-lbl">
+                <a id="cart-head" href="#" @click="isVisibleCart = !isVisibleCart">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                         width="32" height="29" viewBox="0 0 32 29">
+                        <defs>
+                            <path id="cart-chb-svg1" class="cart-chb-svg" d="M1181 41.182c0-.65.533-1.182 1.184-1.182h4.28c.533 0
+                                    1.007.354 1.145.867l4.833 17.455h13.178l4.379-10.048H1195.4a1.186 1.186 0
+                                    0 1-1.184-1.182c0-.65.533-1.182 1.184-1.182h16.413c.394 0 .77.197.986.532.217.335.257.749.099
+                                    1.123l-5.405 12.412c-.198.433-.612.709-1.085.709h-14.855a1.184 1.184 0 0
+                                    1-1.144-.867l-4.833-17.455h-3.393a1.186 1.186 0 0 1-1.184-1.182zm6.747 25.138a2.684
+                                    2.684 0 0 1 5.365 0 2.684 2.684 0 0 1-5.365 0zm16.788.178c-.1-1.458 1.006-2.758 2.485-2.857
+                                    1.48-.098 2.762 1.025 2.86 2.483.04.728-.177 1.418-.65 1.95a2.678 2.678 0 0
+                                    1-1.835.926h-.197c-1.401 0-2.565-1.103-2.663-2.502z"/>
+                        </defs>
+                        <g>
+                            <g transform="translate(-1181 -40)">
+                                <use fill="#222" xlink:href="#cart-chb-svg1"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <div id="drop-box-cart" class="drop-box-cart drop-box-account  drop-box-romb-cart"
+                    v-if="isVisibleCart">
+                    <!--:class="showCart">-->
+                    <div v-if="cart.contents.length !== 0">
+                        <div class="drop-flex-cart"
+                             v-for="item of cart.contents" :key="item.id_product">
+                            <a href="#">
+                                <img :src="imgCart" alt="">
+                            </a>
+                            <div class="drop-block">
+                                <h3 class="drop-heading-cart">
+                                    <a href="#">
+                                        {{item.product_name}}
+                                    </a>
+                                </h3>
+                                <p class="cart-p">
+                                    <i class="cart-star fas fa-star"></i>
+                                    <i class="cart-star fas fa-star"></i>
+                                    <i class="cart-star fas fa-star"></i>
+                                    <i class="cart-star fas fa-star"></i>
+                                    <i class="cart-star fas fa-star-half-alt"></i>
+                                </p>
+                                <p class="cart-price pink">
+                                    {{item.quantity}} x {{item.price}}
+                                </p>
+
+                            </div>
+                            <div class="cart-undo-cont">
+                                <button id="undo-btn2"@click="addProduct">
+                                    <i class="cart-undo fas fa-times-circle"></i>
+                                </button>
+                                <!--<label for="undo-btn2"></label>-->
+                            </div>
+                        </div>
+
+                        <p class="cart-price-total">
+                            TOTAL            <span>$500.00</span>
+                        </p>
+                        <a href="#" class="cart-checkout pink">
+                            Checkout
+                        </a>
+                        <a href="#" class="cart-gotocart pink">
+                            Go to cart
+                        </a>
+                    </div>
+                    <div v-else>
+                        <h3>
+                            Корзина пуста
+                        </h3>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <main>
+        <div class="products">
+            <div class="product-item" v-for="product of filtered_products" :key="product.id_product">
+                <img :src="imgCatalog" alt="Some img">
+                <div class="desc">
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}} $</p>
+                    <button class="buy-btn" >Купить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/hw5.js"></script>
+<!--<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
+</body>
+</html>

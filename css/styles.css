@@ -53,7 +53,7 @@ body {
 .cart-chb-c-lbl {
   position: relative;
   margin-top: 10px;
-  margin-right: 216px;
+  margin-right: 246px;
   z-index: 1;
   height: 40px;
   width: 40px;
@@ -69,6 +69,22 @@ body {
   width: auto;
   height: auto;
   padding: 20px;
+}
+
+.search-form {
+  margin-right: 25px;
+  height: 27px;
+}
+.search-form input {
+  height: 100%;
+  background-color: papayawhip;
+  padding: 2px 6px;
+  box-sizing: border-box;
+}
+.search-form button {
+  padding: 5px;
+  background: none;
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=styles.css.map */
