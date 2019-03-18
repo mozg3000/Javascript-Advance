@@ -56,7 +56,7 @@ body {
   margin-right: 216px;
   z-index: 1;
   height: 40px;
-  width: 40px;
+  width: 400px;
   transition: opacity 100ms ease-in, fill 100ms ease-in;
 }
 .cart-chb-c-lbl:hover .cart-chb-svg {
